@@ -30,7 +30,7 @@ public class Main extends JPanel implements KeyListener {
 
 	private static final Color BACKGROUND = Color.BLACK;
 	private static final Color FOREGROUND = Color.WHITE;
-	private static final int BALL_RADIOUS = 10;
+	private static final int BALL_RADIUS = 10;
 	private static final int[] PLAYER_SIZE = {20, 100};
 	private static final int BORDER_SIZE = 50;
 	private static final int[] BALL_FRUSTRATING_ZONE = {60, 120};
@@ -67,9 +67,9 @@ public class Main extends JPanel implements KeyListener {
 		/* Entity creation */
 
 		this.ball = new Ball(
-			WINDOW_SIZE.width/2 - BALL_RADIOUS,
-			WINDOW_SIZE.height/2 - BALL_RADIOUS,
-			BALL_RADIOUS, FOREGROUND
+			WINDOW_SIZE.width/2 - BALL_RADIUS,
+			WINDOW_SIZE.height/2 - BALL_RADIUS,
+			BALL_RADIUS, FOREGROUND
 		);
 		this.players = new Rectangle[]{
 			new Rectangle(
@@ -130,7 +130,7 @@ public class Main extends JPanel implements KeyListener {
 
 		// Randomize ball direction and position
 		this.ball.setDirection(Math.random() * 360);
-		this.ball.coordinates.y = Math.random() * (WINDOW_SIZE.height - BALL_RADIOUS*2 - 1) + 1;
+		this.ball.coordinates.y = Math.random() * (WINDOW_SIZE.height - BALL_RADIUS*2 - 1) + 1;
 
 		this.ball.adjustDirection(BALL_FRUSTRATING_ZONE[0], BALL_FRUSTRATING_ZONE[1]);
 

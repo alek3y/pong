@@ -5,9 +5,9 @@ public class Ball extends Entity {
 	private int diameter;
 	private Color color;
 
-	public Ball(double x, double y, int radious, Color color) {
-		super(x, y, radious*2, radious*2);
-		this.setRadious(radious);
+	public Ball(double x, double y, int radius, Color color) {
+		super(x, y, radius*2, radius*2);
+		this.setRadius(radius);
 		this.setColor(color);
 	}
 
@@ -34,7 +34,7 @@ public class Ball extends Entity {
 	// 60-120 and 240-300 excluded (https://i.imgur.com/8dtYCCa.png)
 	public void adjustDirection(double min, double max) {
 		this.setDirection(this.getDirection() % 360);		// First ensure it's between 0 and 360
-		
+
 		// Convert negative angle to positive
 		if(this.getDirection() < 0) {
 			this.setDirection(360 + this.getDirection());
@@ -58,15 +58,15 @@ public class Ball extends Entity {
 		}
 	}
 
-	public void setRadious(int radious) {
-		this.diameter = radious*2;
+	public void setRadius(int radius) {
+		this.diameter = radius*2;
 	}
 
 	public void setColor(Color color) {
 		this.color = color;
 	}
 
-	public int getRadious() {
+	public int getRadius() {
 		return this.diameter/2;
 	}
 
